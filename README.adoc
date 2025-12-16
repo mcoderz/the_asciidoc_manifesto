@@ -1,4 +1,4 @@
-= The AsciiDoc Manifesto
+= About The AsciiDoc Manifesto
 :toc: left
 :toclevels: 3
 :icons: font
@@ -9,9 +9,9 @@ A foundational document defining the philosophy, purpose, and worldview of Ascii
 
 ---
 
-== Purpose of This Manifesto
+== Purpose of The AsciiDoc Manifesto
 
-This manifesto articulates the *core principles*, *values*, and *philosophical stance* that guide the AsciiDoc language and its community. It exists to:
+The Manifesto articulates the *core principles*, *values*, and *philosophical stance* that guide the AsciiDoc language and its community. It exists to:
 
 * **Clarify the identity of AsciiDoc** — what it is, why it exists, and what problems it solves
 * **Establish philosophical foundations** — why we prioritize structural integrity over visual convenience
@@ -21,7 +21,7 @@ This manifesto articulates the *core principles*, *values*, and *philosophical s
 
 [IMPORTANT]
 ====
-This manifesto is a *community document*. It reflects the collective understanding of AsciiDoc's philosophy, informed by discussions in forums, the Working Group charter, and the history of the project. It is not official policy, but rather a synthesis of the community's shared values.
+The manifesto is a *community document*. It reflects the collective understanding of AsciiDoc's philosophy, informed by discussions in forums, the Working Group charter, and the history of the project. It is not official policy, but rather a synthesis of the community's shared values.
 ====
 
 ---
@@ -209,9 +209,7 @@ One of the most important concepts in the AsciiDoc ecosystem is the separation b
 
 This repository contains:
 
-1. *The AsciiDoc Manifesto* (`manifesto.adoc`) — The main philosophical document
-2. *The Zen of AsciiDoc* (`zen.adoc`) — Core principles in aphorism form
-3. *Community & Resources Guide* — Supplementary documentation
+*The AsciiDoc Manifesto* (`MANIFESTO.adoc`) — The main philosophical document
 
 === For Newcomers
 
@@ -241,7 +239,7 @@ If you're building an AsciiDoc processor:
 
 == Contributing
 
-This manifesto is a living document. Contributions are welcome via pull requests or discussions on Zulip.
+The manifesto is a living document. Contributions are welcome via pull requests or discussions on Zulip.
 
 === How to Contribute
 
@@ -261,7 +259,7 @@ This manifesto is a living document. Contributions are welcome via pull requests
 
 == License
 
-This manifesto and all associated documentation are released under the https://creativecommons.org/publicdomain/zero/1.0/[*Creative Commons CC0 1.0 Universal (Public Domain Dedication)*].
+The manifesto and all associated documentation are released under the https://creativecommons.org/publicdomain/zero/1.0/[*Creative Commons CC0 1.0 Universal (Public Domain Dedication)*].
 
 You are free to:
 
@@ -281,7 +279,7 @@ You are free to:
 
 == Acknowledgments
 
-This manifesto is built on the work and insights of many contributors:
+The manifesto is built on the work and insights of many contributors:
 
 * *Stuart Rackham* — Creator of AsciiDoc (2002)
 * *Dan Allen* — Lead of Asciidoctor project and AsciiDoc Working Group
