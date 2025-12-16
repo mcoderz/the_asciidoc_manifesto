@@ -1,0 +1,301 @@
+= The AsciiDoc Manifesto
+:toc: left
+:toclevels: 3
+:icons: font
+:source-highlighter: rouge
+
+[.lead]
+A foundational document defining the philosophy, purpose, and worldview of AsciiDoc as a semantic markup language for technical communication.
+
+---
+
+== Purpose of This Manifesto
+
+This manifesto articulates the *core principles*, *values*, and *philosophical stance* that guide the AsciiDoc language and its community. It exists to:
+
+* **Clarify the identity of AsciiDoc** — what it is, why it exists, and what problems it solves
+* **Establish philosophical foundations** — why we prioritize structural integrity over visual convenience
+* **Guide decision-making** — helping the community and Working Group evaluate proposals and maintain consistency
+* **Welcome newcomers** — providing context for those learning AsciiDoc and understanding its worldview (*zeitgeist*)
+* **Distinguish principles from implementations** — separating the AsciiDoc *language specification* from specific *processors* like Asciidoctor
+
+[IMPORTANT]
+====
+This manifesto is a *community document*. It reflects the collective understanding of AsciiDoc's philosophy, informed by discussions in forums, the Working Group charter, and the history of the project. It is not official policy, but rather a synthesis of the community's shared values.
+====
+
+---
+
+== Understanding the AsciiDoc Ecosystem
+
+The AsciiDoc ecosystem consists of several distinct but interconnected components. Understanding these distinctions is crucial:
+
+=== AsciiDoc Language vs. AsciiDoc Processors
+
+[cols="1,3", options="header"]
+|===
+|Component
+|Description
+
+|*AsciiDoc Language*
+|The *specification* — formal syntax, grammar, semantics, and APIs defined by the Eclipse Foundation AsciiDoc Working Group. This is vendor-neutral and implementation-agnostic.
+
+|*AsciiDoc Processors*
+|*Implementations* of the AsciiDoc Language Specification. These are tools that parse AsciiDoc source and convert it to output formats (HTML, PDF, DocBook, etc.).
+|===
+
+[NOTE]
+====
+*Key distinction:* The AsciiDoc Language is **one standard**. AsciiDoc Processors are **many implementations** — all conforming to the same specification.
+====
+
+=== Major AsciiDoc Processors
+
+[cols="1,2,2", options="header"]
+|===
+|Processor
+|Language
+|Description
+
+|*Asciidoctor*
+|Ruby
+|The reference implementation, developed by Dan Allen, Sarah White, and the Asciidoctor community. Fast, feature-rich, and widely adopted. This is the most mature and complete processor.
+
+|*Asciidoctor.js*
+|JavaScript
+|JavaScript port of Asciidoctor, runs in browsers and Node.js environments.
+
+|*AsciidoctorJ*
+|JVM (Java)
+|Java bindings for Asciidoctor, integrates with Maven, Gradle, and Java applications.
+
+|*asciidoc-py*
+|Python
+|Community-maintained fork of the original AsciiDoc.py by Stuart Rackham (2002).
+
+|*Other implementations*
+|Various
+|Community members may create new processors (e.g., Go, Rust, C++) as long as they conform to the AsciiDoc Language Specification and pass the Technology Compatibility Kit (TCK).
+|===
+
+[IMPORTANT]
+====
+*Asciidoctor is not AsciiDoc.* Asciidoctor is **an implementation** of the AsciiDoc language. The AsciiDoc language specification is maintained by the Eclipse Foundation Working Group and is implementation-neutral.
+====
+
+---
+
+== The AsciiDoc Ecosystem: Key Resources
+
+=== AsciiDoc Language (Eclipse Foundation)
+
+These resources pertain to the *standardization and specification* of the AsciiDoc language itself:
+
+https://projects.eclipse.org/projects/asciidoc[*AsciiDoc Top-Level Project*]::
+Official Eclipse Foundation project page. Provides governance structure, project scope, and Working Group information.
+
+https://www.eclipse.org/org/working-groups/asciidoc/charter/[*AsciiDoc Working Group Charter*]::
+Formal charter defining the mission, scope, and governance of the AsciiDoc Working Group. Essential reading for understanding the official goals of standardization.
+
+https://gitlab.eclipse.org/eclipse/asciidoc-lang[*AsciiDoc Language GitLab Group*]::
+Parent group hosting all Eclipse Foundation repositories related to AsciiDoc language standardization.
+
+https://gitlab.eclipse.org/eclipse/asciidoc-lang/asciidoc-lang[*AsciiDoc Language Specification Repository*]::
+Official repository for the AsciiDoc Language Specification, Abstract Semantic Graph (ASG), Document Object Model (DOM), and extension SPI. This is the **source of truth** for what constitutes valid AsciiDoc syntax and semantics.
+
+https://gitlab.eclipse.org/eclipse/asciidoc-lang/asciidoc-tck[*AsciiDoc Technology Compatibility Kit (TCK)*]::
+Test suite for verifying that AsciiDoc processors conform to the specification. Any processor claiming AsciiDoc compatibility should pass the TCK.
+
+[TIP]
+====
+If you're implementing a new AsciiDoc processor or contributing to standardization discussions, start with the *Language Specification* and *TCK* repositories.
+====
+
+---
+
+=== Asciidoctor Project (Ruby Implementation)
+
+These resources pertain to *Asciidoctor*, the reference implementation of AsciiDoc written in Ruby:
+
+https://github.com/asciidoctor/asciidoctor[*Asciidoctor GitHub Repository*]::
+Main repository for the Asciidoctor processor (Ruby). This is where development, issues, and contributions for the Ruby implementation happen.
+
+https://docs.asciidoctor.org/asciidoc/latest/[*Asciidoctor Documentation*]::
+Comprehensive user documentation for writing AsciiDoc documents and using the Asciidoctor toolchain. While it documents the Asciidoctor implementation, most syntax information applies to AsciiDoc in general.
+
+https://asciidoctor.org/news/[*Asciidoctor News (archived)*]::
+Historical project announcements and release notes for Asciidoctor. *Note:* This news feed is no longer actively updated. For current updates, follow the https://github.com/asciidoctor/asciidoctor[GitHub repository] releases or join the Zulip chat.
+
+[NOTE]
+====
+Asciidoctor documentation often serves as a *de facto reference* for AsciiDoc syntax because it is comprehensive and actively maintained. However, for formal standardization questions, consult the Eclipse Foundation Language Specification.
+====
+
+---
+
+=== Community & Communication
+
+https://asciidoc.zulipchat.com/[*AsciiDoc Language Chat (Zulip)*]::
+Primary communication channel for discussions about the *AsciiDoc Language Specification*, standardization efforts, and Eclipse Foundation Working Group activities. Use this for:
++
+* Questions about the language specification
+* Proposals for language changes or clarifications
+* TCK development and conformance testing
+* Working Group coordination
+
+https://discuss.asciidoctor.org/[*Asciidoctor Discussion Forum (archived)*]::
+Historical discussion forum for the Asciidoctor community. Now archived but remains accessible for reference. Active discussions have moved to Zulip.
+
+[TIP]
+====
+For real-time help and community engagement, use the **Zulip chat**. For historical context or past discussions, consult the **archived forum**.
+====
+
+---
+
+== Standardization vs. Implementation: A Critical Distinction
+
+One of the most important concepts in the AsciiDoc ecosystem is the separation between *language standardization* and *processor implementation*.
+
+=== The AsciiDoc Language (Standardization)
+
+[cols="1,3"]
+|===
+|Governed by
+|Eclipse Foundation AsciiDoc Working Group
+
+|Defined in
+|AsciiDoc Language Specification (GitLab)
+
+|Purpose
+|Establish a vendor-neutral, formally specified language that ensures interoperability across processors
+
+|Output
+|Syntax specification, ASG, DOM, extension SPI, TCK
+
+|Philosophy
+|*One language, many implementations* — avoiding the fragmentation that plagued Markdown
+|===
+
+=== AsciiDoc Processors (Implementations)
+
+[cols="1,3"]
+|===
+|Examples
+|Asciidoctor (Ruby), Asciidoctor.js (JavaScript), AsciidoctorJ (JVM), asciidoc-py (Python)
+
+|Purpose
+|Parse AsciiDoc source and convert to output formats (HTML, PDF, DocBook, EPUB, etc.)
+
+|Requirements
+|Must conform to AsciiDoc Language Specification and pass TCK
+
+|Flexibility
+|Can add extensions, custom converters, and tooling — but must not break core specification compatibility
+|===
+
+[IMPORTANT]
+====
+*Why this matters:*
+
+* Users can switch between processors without rewriting content
+* Organizations can choose processors based on technical needs (language, performance, ecosystem) without being locked in
+* Innovation can happen in processors without fragmenting the language
+====
+
+---
+
+== How to Use This Repository
+
+This repository contains:
+
+1. *The AsciiDoc Manifesto* (`manifesto.adoc`) — The main philosophical document
+2. *The Zen of AsciiDoc* (`zen.adoc`) — Core principles in aphorism form
+3. *Community & Resources Guide* — Supplementary documentation
+
+=== For Newcomers
+
+If you're new to AsciiDoc, start here:
+
+1. Read the *Manifesto* to understand the philosophy and worldview
+2. Explore https://docs.asciidoctor.org/asciidoc/latest/[Asciidoctor Documentation] to learn syntax
+3. Join https://asciidoc.zulipchat.com/[Zulip chat] to ask questions
+
+=== For Working Group Members
+
+If you're involved in standardization:
+
+1. Review the *Manifesto* to align with community values
+2. Reference https://gitlab.eclipse.org/eclipse/asciidoc-lang/asciidoc-lang[Language Specification] for technical details
+3. Use https://asciidoc.zulipchat.com/[Zulip] for coordination
+
+=== For Implementors
+
+If you're building an AsciiDoc processor:
+
+1. Study the https://gitlab.eclipse.org/eclipse/asciidoc-lang/asciidoc-lang[Language Specification]
+2. Run your processor against the https://gitlab.eclipse.org/eclipse/asciidoc-lang/asciidoc-tck[TCK]
+3. Engage with the community on https://asciidoc.zulipchat.com/[Zulip]
+
+---
+
+== Contributing
+
+This manifesto is a living document. Contributions are welcome via pull requests or discussions on Zulip.
+
+=== How to Contribute
+
+1. Fork this repository
+2. Make your changes
+3. Submit a pull request with a clear description of your improvements
+4. Engage in discussion if feedback is provided
+
+=== Contribution Guidelines
+
+* Respect the *philosophical coherence* of the manifesto
+* Provide citations or community discussion references for significant claims
+* Maintain the tone: welcoming but realistic, philosophical but practical
+* Avoid promoting specific tools or vendors unless contextually necessary
+
+---
+
+== License
+
+This manifesto and all associated documentation are released under the https://creativecommons.org/publicdomain/zero/1.0/[*Creative Commons CC0 1.0 Universal (Public Domain Dedication)*].
+
+You are free to:
+
+* Copy, modify, and distribute this work
+* Use it for any purpose, commercial or non-commercial
+* Translate it into other languages
+* Adapt it for your organization's documentation philosophy
+
+*No attribution required*, but acknowledgment is appreciated.
+
+[NOTE]
+====
+*Why CC0?* This license ensures that the manifesto's ideas can spread freely and be adapted without legal barriers. We believe that philosophical documents about open standards should themselves be maximally open.
+====
+
+---
+
+== Acknowledgments
+
+This manifesto is built on the work and insights of many contributors:
+
+* *Stuart Rackham* — Creator of AsciiDoc (2002)
+* *Dan Allen* — Lead of Asciidoctor project and AsciiDoc Working Group
+* *Sarah White* — Co-lead of Asciidoctor project
+* *The AsciiDoc Working Group* — For driving standardization
+* *The Asciidoctor Community* — For building tools, writing documentation, and supporting users
+* *Forum participants* — Whose discussions and debates shaped this manifesto's clarity
+
+Special thanks to community members like *Terence Kearns* for articulating the philosophy of structural integrity, and to all who have contributed to making AsciiDoc a robust, trusted standard.
+
+---
+
+[.text-center]
+*"Documentation is not decoration. It is the preservation and transmission of knowledge across time and people."*
+
+[.text-center]
+— The AsciiDoc Community
