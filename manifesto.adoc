@@ -1,5 +1,7 @@
 = The AsciiDoc Manifesto: A Philosophy of Structural Integrity: A foundational document defining the spirit, purpose, and future of AsciiDoc.
 :sectnums:
+:icons: font
+:source-highlighter: rouge
 
 '''
 
