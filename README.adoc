@@ -11,7 +11,7 @@ A foundational document defining the philosophy, purpose, and worldview of Ascii
 
 == Purpose of The AsciiDoc Manifesto
 
-The Manifesto articulates the *core principles*, *values*, and *philosophical stance* that guide the AsciiDoc language and its community. It exists to:
+The link:./MANIFESTO.adoc[MANIFESTO.adoc] articulates the *core principles*, *values*, and *philosophical stance* that guide the AsciiDoc language and its community. It exists to:
 
 * **Clarify the identity of AsciiDoc** — what it is, why it exists, and what problems it solves
 * **Establish philosophical foundations** — why we prioritize structural integrity over visual convenience
@@ -21,7 +21,7 @@ The Manifesto articulates the *core principles*, *values*, and *philosophical st
 
 [IMPORTANT]
 ====
-The manifesto is a *community document*. It reflects the collective understanding of AsciiDoc's philosophy, informed by discussions in forums, the Working Group charter, and the history of the project. It is not official policy, but rather a synthesis of the community's shared values.
+link:./MANIFESTO.adoc[MANIFESTO.adoc] is a *community document*. It reflects the collective understanding of AsciiDoc's philosophy, informed by discussions in forums, the Working Group charter, and the history of the project. It is not official policy, but rather a synthesis of the community's shared values.
 ====
 
 ---
@@ -239,7 +239,7 @@ If you're building an AsciiDoc processor:
 
 == Contributing
 
-The manifesto is a living document. Contributions are welcome via pull requests or discussions on Zulip.
+link:./MANIFESTO.adoc[MANIFESTO.adoc] is a living document. Contributions are welcome via pull requests or discussions on Zulip.
 
 === How to Contribute
 
@@ -259,7 +259,7 @@ The manifesto is a living document. Contributions are welcome via pull requests 
 
 == License
 
-The manifesto and all associated documentation are released under the https://creativecommons.org/publicdomain/zero/1.0/[*Creative Commons CC0 1.0 Universal (Public Domain Dedication)*].
+link:./MANIFESTO.adoc[MANIFESTO.adoc] and all associated documentation are released under the https://creativecommons.org/publicdomain/zero/1.0/[*Creative Commons CC0 1.0 Universal (Public Domain Dedication)*].
 
 You are free to:
 
