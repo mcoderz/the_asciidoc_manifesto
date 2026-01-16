@@ -1,0 +1,71 @@
+= Resources & Links
+:toc: left
+:toclevels: 3
+:icons: font
+:source-highlighter: rouge
+
+
+== AsciiDoc Language (Eclipse Foundation)
+
+These resources pertain to the *standardization and specification* of the AsciiDoc language itself:
+
+https://projects.eclipse.org/projects/asciidoc[*AsciiDoc Top-Level Project*]::
+Official Eclipse Foundation project page. Provides governance structure, project scope, and Working Group information.
+
+https://www.eclipse.org/org/working-groups/asciidoc/charter/[*AsciiDoc Working Group Charter*]::
+Formal charter defining the mission, scope, and governance of the AsciiDoc Working Group. Essential reading for understanding the official goals of standardization.
+
+https://gitlab.eclipse.org/eclipse/asciidoc-lang[*AsciiDoc Language GitLab Group*]::
+Parent group hosting all Eclipse Foundation repositories related to AsciiDoc language standardization.
+
+https://gitlab.eclipse.org/eclipse/asciidoc-lang/asciidoc-lang[*AsciiDoc Language Specification Repository*]::
+Official repository for the AsciiDoc Language Specification, Abstract Semantic Graph (ASG), Document Object Model (DOM), and extension SPI. This is the **source of truth** for what constitutes valid AsciiDoc syntax and semantics.
+
+https://gitlab.eclipse.org/eclipse/asciidoc-lang/asciidoc-tck[*AsciiDoc Technology Compatibility Kit (TCK)*]::
+Test suite for verifying that AsciiDoc processors conform to the specification. Any processor claiming AsciiDoc compatibility should pass the TCK.
+
+[TIP]
+====
+If you're implementing a new AsciiDoc processor or contributing to standardization discussions, start with the *Language Specification* and *TCK* repositories.
+====
+
+---
+
+== Asciidoctor Project (Ruby Implementation)
+
+These resources pertain to *Asciidoctor*, the reference implementation of AsciiDoc written in Ruby:
+
+https://github.com/asciidoctor/asciidoctor[*Asciidoctor GitHub Repository*]::
+Main repository for the Asciidoctor processor (Ruby). This is where development, issues, and contributions for the Ruby implementation happen.
+
+https://docs.asciidoctor.org/asciidoc/latest/[*Asciidoctor Documentation*]::
+Comprehensive user documentation for writing AsciiDoc documents and using the Asciidoctor toolchain. While it documents the Asciidoctor implementation, most syntax information applies to AsciiDoc in general.
+
+https://asciidoctor.org/news/[*Asciidoctor News (archived)*]::
+Historical project announcements and release notes for Asciidoctor. *Note:* This news feed is no longer actively updated. For current updates, follow the https://github.com/asciidoctor/asciidoctor[GitHub repository] releases or join the Zulip chat.
+
+[NOTE]
+====
+Asciidoctor documentation often serves as a *de facto reference* for AsciiDoc syntax because it is comprehensive and actively maintained. However, for formal standardization questions, consult the Eclipse Foundation Language Specification.
+====
+
+'''
+
+== Community & Communication
+
+https://asciidoc.zulipchat.com/[*AsciiDoc Language Chat (Zulip)*]::
+Primary communication channel for discussions about the *AsciiDoc Language Specification*, standardization efforts, and Eclipse Foundation Working Group activities. Use this for:
++
+* Questions about the language specification
+* Proposals for language changes or clarifications
+* TCK development and conformance testing
+* Working Group coordination
+
+https://discuss.asciidoctor.org/[*Asciidoctor Discussion Forum (archived)*]::
+Historical discussion forum for the Asciidoctor community. Now archived but remains accessible for reference. Active discussions have moved to Zulip.
+
+[TIP]
+====
+For real-time help and community engagement, use the **Zulip chat**. For historical context or past discussions, consult the **archived forum**.
+====
+

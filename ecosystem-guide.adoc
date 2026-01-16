@@ -1,0 +1,117 @@
+= Ecosystem Guide
+:toc: left
+:toclevels: 3
+:icons: font
+:source-highlighter: rouge
+
+== Understanding the AsciiDoc Ecosystem
+
+The AsciiDoc ecosystem consists of several distinct but interconnected components. Understanding these distinctions is crucial.
+
+=== AsciiDoc Language vs. AsciiDoc Processors
+
+[cols="1,3", options="header"]
+|===
+|Component
+|Description
+
+|*AsciiDoc Language*
+|The *specification* — formal syntax, grammar, semantics, and APIs defined by the Eclipse Foundation AsciiDoc Working Group. This is vendor-neutral and implementation-agnostic.
+
+|*AsciiDoc Processors*
+|*Implementations* of the AsciiDoc Language Specification. These are tools that parse AsciiDoc source and convert it to output formats (HTML, PDF, DocBook, etc.).
+|===
+
+[NOTE]
+====
+*Key distinction:* The AsciiDoc Language is *one standard*. AsciiDoc Processors are *many implementations* — all conforming to the same specification.
+====
+
+'''
+
+=== Major AsciiDoc Processors
+
+[cols="1,2,2", options="header"]
+|===
+|Processor
+|Language
+|Description
+
+|*Asciidoctor*
+|Ruby
+|The reference implementation, developed by Dan Allen, Sarah White, and the Asciidoctor community. Fast, feature-rich, and widely adopted. This is the most mature and complete processor.
+
+|*Asciidoctor.js*
+|JavaScript
+|JavaScript port of Asciidoctor, runs in browsers and Node.js environments.
+
+|*AsciidoctorJ*
+|JVM (Java)
+|Java bindings for Asciidoctor, integrates with Maven, Gradle, and Java applications.
+
+|*asciidoc-py*
+|Python
+|Community-maintained fork of the original AsciiDoc.py by Stuart Rackham (2002).
+
+|*Other implementations*
+|Various
+|Community members may create new processors (e.g., Go, Rust, C++) as long as they conform to the AsciiDoc Language Specification and pass the Technology Compatibility Kit (TCK).
+|===
+
+[IMPORTANT]
+====
+*Asciidoctor is not AsciiDoc.* Asciidoctor is *an implementation* of the AsciiDoc language. The AsciiDoc language specification is maintained by the Eclipse Foundation Working Group and is implementation-neutral.
+====
+
+'''
+
+== Standardization vs. Implementation: A Critical Distinction
+
+One of the most important concepts in the AsciiDoc ecosystem is the separation between *language standardization* and *processor implementation*.
+
+=== The AsciiDoc Language (Standardization)
+
+[cols="1,3"]
+|===
+|Governed by
+|Eclipse Foundation AsciiDoc Working Group
+
+|Defined in
+|AsciiDoc Language Specification (GitLab)
+
+|Purpose
+|Establish a vendor-neutral, formally specified language that ensures interoperability across processors
+
+|Output
+|Syntax specification, ASG, DOM, extension SPI, TCK
+
+|Philosophy
+|*One language, many implementations* — avoiding the fragmentation that plagued Markdown
+|===
+
+=== AsciiDoc Processors (Implementations)
+
+[cols="1,3"]
+|===
+|Examples
+|Asciidoctor (Ruby), Asciidoctor.js (JavaScript), AsciidoctorJ (JVM), asciidoc-py (Python)
+
+|Purpose
+|Parse AsciiDoc source and convert to output formats (HTML, PDF, DocBook, EPUB, etc.)
+
+|Requirements
+|Must conform to AsciiDoc Language Specification and pass TCK
+
+|Flexibility
+|Can add extensions, custom converters, and tooling — but must not break core specification compatibility
+|===
+
+[IMPORTANT]
+====
+*Why this matters:*
+
+* Users can switch between processors without rewriting content
+* Organizations can choose processors based on technical needs (language, performance, ecosystem) without being locked in
+* Innovation can happen in processors without fragmenting the language
+====
+
