@@ -6,36 +6,19 @@
 
 '''
 
-[abstract]
 == Writing Shouldn't Be This Hard
 
-[.excerpt]
-____
-Writing is hard.
-____
+Writing is hard. Experience has conditioned us to believe this, yet we cannot avoid it, especially in the tech industry. Even the most brilliant software becomes useless without good documentation. If users fail, the project fails.
 
-That's what experience has conditioned us to believe.
+As Nick Coghlan observed: "Unless your UI discoverability is really good, saying 'the feature isn't documented' is the same as saying 'the product can't do it.'" Live or die by documentation.
 
-But we can't just avoid it, especially in the tech industry. We *must* write. Even the most brilliant software is useless without good documentation. If the users fail, so does the project.
+Then why do we make writing more difficult by burying content in XML schemas like DocBook, allowing complex word processors to distract us, or wasting time battling finicky WYSIWYG editors?
 
-[quote,Nick Coghlan]
-____
-Unless your UI discoverability is *really good*, saying "the feature isn't documented" is the same as saying "the product can't do it." 
-____
+Consider this: writing documentation could be as simple as writing an email. Lightweight markup languages such as AsciiDoc offer plain-text syntax, embellished with subtle yet intuitive markup, designed for humans to read, write, and edit in raw form. The natural feel of the syntax keeps you focused on the content. Plain text can quickly and easily be translated into output formats such as HTML5, PDF, and EPUB for presentation.
 
-In other words: *Live or die by documentation.*
+AsciiDoc goes further than most lightweight markup languages. It preserves the semantic richness necessary for professional technical publishing without sacrificing human readability.
 
-Then why, *oh why*, do we make it more difficult by burying the content in XML schemas like DocBook, allowing complex word processors to distract us, or wasting time battling with finicky WYSIWYG editors?
-
-*Here's a radical idea:* What if writing documentation was as simple as writing an email?
-
-*It can be.*
-
-That's the idea behind *lightweight markup languages* such as AsciiDoc. They offer a plain-text syntax, embellished with subtle yet intuitive markup, that's designed for humans to read, write, and edit in raw form. The natural feel of the syntax keeps you focused on the content. Best of all, plain text can quickly and easily be translated into output formats such as HTML5, PDF, and EPUB for presentation.
-
-But AsciiDoc goes further than most lightweight markup languages. It preserves the *semantic richness* necessary for professional technical publishing — without sacrificing human readability.
-
-This manifesto explains what AsciiDoc is, why it exists, and what it stands for. It defines the worldview of the AsciiDoc Working Group and the broader AsciiDoc community. If you care about *structural integrity*, *long-term maintainability*, and *semantic truth*, read on.
+This manifesto explains what AsciiDoc is, why it exists, and what it stands for. It defines the worldview of the AsciiDoc Working Group and the broader AsciiDoc community.
 
 '''
 
@@ -45,8 +28,8 @@ This manifesto explains what AsciiDoc is, why it exists, and what it stands for.
 
 In the early 2000s, technical writers faced a fundamental dilemma:
 
-* *DocBook XML* offered semantic precision and professional publishing power, but was verbose, difficult to write, and nearly impossible to read in raw form. The angle brackets obscured the content they were supposed to describe.
-+
+*DocBook XML* offered semantic precision and professional publishing power, but was verbose, difficult to write, and nearly impossible to read in raw form. The angle brackets obscured the content they were supposed to describe.
+
 [source,xml]
 ----
   <section id="_first_section">
@@ -56,25 +39,20 @@ In the early 2000s, technical writers faced a fundamental dilemma:
     </itemizedlist>
   </section>
 ----
-+
-Yikes! While DocBook may be powerful, it fails the *readability test*.
 
-* *WYSIWYG editors* (Microsoft Word, OpenOffice) produced binary formats incompatible with version control, made collaboration fragile, and created vendor lock-in. Changes were opaque. Diffs were meaningless. And before you could type the first word, you were forced to think about font families, sizes, and line spacing instead of *what you wanted to say*.
+While DocBook may be powerful, it fails the readability test.
 
-* *HTML* required technical expertise and lacked the semantic richness needed for structured technical documentation (cross-references, admonitions, conditional content, etc.).
+*WYSIWYG editors* (Microsoft Word, OpenOffice) produced binary formats incompatible with version control, made collaboration fragile, and created vendor lock-in. Changes were opaque. Diffs were meaningless. Before typing the first word, writers were forced to think about font families, sizes, and line spacing instead of what they wanted to say.
 
-* *Markdown* (created the same year as AsciiDoc) was lightweight and readable, but semantically limited by design — optimized for blog posts and README files, not for books, articles, and complex technical documentation.
+*HTML* required technical expertise and lacked the semantic richness needed for structured technical documentation (cross-references, admonitions, conditional content).
+
+*Markdown* (created the same year as AsciiDoc) was lightweight and readable, but semantically limited by design — optimized for blog posts and README files, not for books, articles, and complex technical documentation.
 
 === The Solution: AsciiDoc (Stuart Rackham, 2002)
 
-Stuart Rackham created AsciiDoc in 2002 as *a plain-text shorthand format for DocBook*, designed to be both *human-readable* and *semantically equivalent to DocBook XML*.
+Stuart Rackham created AsciiDoc in 2002 as a plain-text shorthand format for DocBook, designed to be both human-readable and semantically equivalent to DocBook XML.
 
-Here's how he introduced it:
-
-[quote,Stuart Rackham, Creator of AsciiDoc]
-____
-You write an AsciiDoc document the same way you would write a normal text document. There are no markup tags or weird format notations. AsciiDoc files are designed to be viewed, edited and printed directly or translated to other presentation formats.  
-____
+He introduced it this way: "You write an AsciiDoc document the same way you would write a normal text document. There are no markup tags or weird format notations. AsciiDoc files are designed to be viewed, edited and printed directly or translated to other presentation formats."
 
 Compare the same content:
 
@@ -108,26 +86,21 @@ puts "Hello, World!"
 </section>
 ----
 
-*It's a plain text syntax… I know this!*
+The founding principle was clear: you should not have to choose between readability and semantic power. AsciiDoc provides both.
 
-The founding principle was clear: *you should not have to choose between readability and semantic power*. AsciiDoc provides both.
-
-[quote,Linus Torvalds]
-____
-Use AsciiDoc for document markup. Really. It's actually *readable* by humans, easier to parse and way more flexible than XML.  
-____
+Linus Torvalds put it bluntly: "Use AsciiDoc for document markup. Really. It's actually readable by humans, easier to parse and way more flexible than XML."
 
 === Evolution: From AsciiDoc.py to Asciidoctor to Standardization
 
-* *2002–2013:* Stuart Rackham developed and maintained *AsciiDoc.py*, the original Python implementation, which served the community for over a decade.
+*2002–2013:* Stuart Rackham developed and maintained AsciiDoc.py, the original Python implementation, which served the community for over a decade.
 
-* *2012–2013:* *Asciidoctor* emerged from collaboration between GitHub (Ryan Waldron, based on Nick Hengeveld's prototype for Git documentation) and Red Hat (Dan Allen, Sarah White) to provide a secure, performant Ruby processor for GitHub's AsciiDoc support and the Git project documentation.
+*2012–2013:* Asciidoctor emerged from collaboration between GitHub (Ryan Waldron, based on Nick Hengeveld's prototype for Git documentation) and Red Hat (Dan Allen, Sarah White) to provide a secure, performant Ruby processor for GitHub's AsciiDoc support and the Git project documentation.
 
-* *2019:* Dan Allen and Sarah White, with Stuart Rackham's endorsement, proposed creating a *formal AsciiDoc Language Specification* under the Eclipse Foundation to ensure vendor-neutral governance and long-term sustainability.
+*2019:* Dan Allen and Sarah White, with Stuart Rackham's endorsement, proposed creating a formal AsciiDoc Language Specification under the Eclipse Foundation to ensure vendor-neutral governance and long-term sustainability.
 
-* *2019–present:* The *AsciiDoc Working Group* at the Eclipse Foundation now drives standardization, adoption, and evolution of AsciiDoc through open collaboration. The specification includes syntax definition, Abstract Semantic Graph (ASG), Document Object Model (DOM), extension SPI, and a Technology Compatibility Kit (TCK).
+*2019–present:* The AsciiDoc Working Group at the Eclipse Foundation now drives standardization, adoption, and evolution of AsciiDoc through open collaboration. The specification includes syntax definition, Abstract Semantic Graph (ASG), Document Object Model (DOM), extension SPI, and a Technology Compatibility Kit (TCK).
 
-This evolution reflects a commitment to *vendor-neutral governance* and *long-term sustainability*. AsciiDoc is not controlled by a single company or implementation — it is a *community-driven standard*.
+This evolution reflects a commitment to vendor-neutral governance and long-term sustainability. AsciiDoc is controlled by community-driven standards, not by a single company or implementation.
 
 '''
 
@@ -135,102 +108,84 @@ This evolution reflects a commitment to *vendor-neutral governance* and *long-te
 
 === Mission
 
-To provide a vendor-neutral space for users, developers, and organizations to drive the *standardization, adoption, and evolution* of the AsciiDoc language, empowering technical writers and developers to manage documentation with the same *semantic precision*, *modularity*, and *rigorous methodologies* applied to software development.
+To provide a vendor-neutral space for users, developers, and organizations to drive the standardization, adoption, and evolution of the AsciiDoc language, empowering technical writers and developers to manage documentation with the same semantic precision, modularity, and rigorous methodologies applied to software development.
 
 AsciiDoc exists to:
 
-1. *Separate content from presentation* — enabling writers to focus on *meaning*, not *appearance*.
-2. *Preserve semantic richness* — offering complete structural elements (admonitions, cross-references, indexes, conditional content) required for professional technical publishing.
-3. *Ensure longevity and portability* — plain text outlives binary formats; open standards outlast proprietary tools.
-4. *Enable true collaboration* — native integration with version control (Git) and docs-as-code workflows.
+. Separate content from presentation. _Enabling writers to focus on meaning, not appearance._
+. Preserve semantic richness. _Offering complete structural elements (admonitions, cross-references, indexes, conditional content) required for professional technical publishing._
+. Ensure longevity and portability. _Plain text outlives binary formats; open standards outlast proprietary tools._
+. Enable true collaboration. _Native integration with version control (Git) and docs-as-code workflows._
 
 === Vision
 
-To foster AsciiDoc as an effective, flexible, and lightweight choice for technical communication, establishing it as the *open, interoperable standard* for semantic markup — ensuring that content remains *accessible, transformable, and trustworthy* for decades, regardless of evolving tools or visual trends.
+To foster AsciiDoc as an effective, flexible, and lightweight choice for technical communication, establishing it as the open, interoperable standard for semantic markup; ensuring that content remains accessible, transformable, and trustworthy for decades, regardless of evolving tools or visual trends.
 
 The Eclipse Foundation governance guarantees:
 
-- A formal *Language Specification* defining syntax, grammar, Abstract Semantic Graph (ASG), Document Object Model (DOM), and extension points.
-- An open-source *Technology Compatibility Kit (TCK)* ensuring that different implementations remain interoperable.
-- *Vendor neutrality* — preventing corporate capture or dialect fragmentation.
+* A formal Language Specification defining syntax, grammar, Abstract Semantic Graph (ASG), Document Object Model (DOM), and extension points.
+* An open-source Technology Compatibility Kit (TCK) ensuring that different implementations remain interoperable.
+* Vendor neutrality  —  preventing corporate capture or dialect fragmentation.
 
-*Unlike Markdown* (which has dozens of incompatible "flavors"), AsciiDoc pursues *one language, many implementations* — all conformant and interoperable.
+Unlike Markdown (which has dozens of incompatible "flavors"), AsciiDoc pursues one language, many implementations — all conformant and interoperable.
 
 '''
 
-== The Zen of AsciiDoc
-_Core Principles_
+== The Zen of AsciiDoc: Core Principles
 
-. *Semantics over formatting.* +
-   _Do not say how it should look; say what it is._
+. *Semantics over formatting.* Do not say how it should look; say what it is.
 
-. *Human legibility is non-negotiable.* +
-  _If the source is hard to read, the language has failed._
+. *Human legibility is non-negotiable.* If the source is hard to read, the language has failed.
 
-. *Composition beats duplication.* +
-   _Don't repeat yourself. Modularize content. Single-source the truth._
+. *Composition beats duplication.* Don't repeat yourself. Modularize content. Single-source the truth.
 
-. A clear diff is better than a comment track. +
-  _Changes must be auditable in version control, not hidden in metadata._
+. *A clear diff is better than a comment track.* Changes must be auditable in version control, not hidden in metadata.
 
-. *Abandon the verbosity, keep the meaning.* +
-  _The complexity of DocBook XML must die; the semantic structure of DocBook must live._
+. *Abandon the verbosity, keep the meaning.* The complexity of DocBook XML must die; the semantic structure of DocBook must live.
 
-. *One standard is better than many dialects.* +
-  _Fragmentation is the enemy of longevity and trust._
+. *One standard is better than many dialects.* Fragmentation is the enemy of longevity and trust.
 
-. *The text is the source of truth.* +
-  _The render is ephemeral; the source is eternal._
+. *The text is the source of truth.* The render is ephemeral; the source is eternal.
 
-. *Documentation is engineering.* +
-  _Treat docs with the same rigor, testing, and CI/CD as software code._
+. *Documentation is engineering.* Treat docs with the same rigor, testing, and CI/CD as software code.
 
-. *Precision beats convenience.* +
-   _The visual shortcut of today is the technical debt of tomorrow._
+. *Precision beats convenience.* The visual shortcut of today is the technical debt of tomorrow.
 
-. *Code assistance is better than visual illusion.* +
-  _Empower the writer with intelligence — linters, autocomplete, validation — not with masking._
+. *Code assistance is better than visual illusion.* Empower the writer with intelligence  —  linters, autocomplete, validation  —  not with masking.
 
-. *Trust is born from integrity.* +
-  _A visually beautiful document with ambiguous structure is a lie._
+. *Trust is born from integrity.* A visually beautiful document with ambiguous structure is a lie.
 
-. *Craft over typing.* +
-  _Writing documentation is an act of deliberate construction._
+. *Craft over typing.* Writing documentation is an act of deliberate construction.
 
-. *Portability is freedom.* +
-  _Plain text outlives proprietary formats. Interoperability outlasts vendor lock-in._
+. *Portability is freedom.* Plain text outlives proprietary formats. Interoperability outlasts vendor lock-in.
 
-. *Extensibility without fragmentation.* +
-  _Innovation should enhance, not divide. Extensions must be compatible._
+. *Extensibility without fragmentation.* Innovation should enhance, not divide. Extensions must be compatible.
 
-. *Standardization enables trust.* +  
-  _A formal specification with TCK ensures that "AsciiDoc" means the same thing everywhere._
+. *Standardization enables trust.* A formal specification with TCK ensures that "AsciiDoc" means the same thing everywhere.
 
 '''
 
 == Why AsciiDoc Works
 
-AsciiDoc is not just theory. It works because:
+=== Readability
 
-=== It's readable
+You can open an AsciiDoc file in any text editor and immediately understand its structure  —  no special software required. The punctuation was carefully chosen to look like what it means. A user unfamiliar with AsciiDoc can figure out the structure and semantics just by looking at it.
 
-You can open an AsciiDoc file in any text editor and immediately understand its structure — no special software required. The punctuation was carefully chosen to look like what it means. A user unfamiliar with AsciiDoc can figure out the structure and semantics just by looking at it.
-
-=== It's concise
+=== Conciseness
 
 AsciiDoc strikes the balance between Markdown's simplicity and DocBook's power. You get semantic richness without XML verbosity.
 
-=== It's comprehensive
+=== Comprehensiveness
 
 Unlike Markdown, AsciiDoc supports all the structural elements necessary for drafting articles, technical manuals, books, presentations, and prose. It's capable of meeting even the most advanced publishing requirements and technical semantics.
 
-=== It's extensible
+=== Extensibility
 
 AsciiDoc can be extended through attributes, macros, and custom converters without breaking the core language specification.
 
-=== It produces beautiful output
+=== Output Quality
 
-AsciiDoc converts to HTML5, DocBook, PDF, EPUB, man pages, and more — beautifully formatted, without having to rewrite the content. Worst case scenario, you convert it to DocBook as a common exchange format. *DocBook is the "no lock-in" exit path for AsciiDoc.*
+AsciiDoc converts to HTML5, DocBook, PDF, EPUB, man pages, and more  —  beautifully formatted, without having to rewrite the content. Worst case scenario, you convert it to DocBook as a common exchange format. DocBook is the "no lock-in" exit path for AsciiDoc.
 
 '''
 
@@ -238,61 +193,56 @@ AsciiDoc converts to HTML5, DocBook, PDF, EPUB, man pages, and more — beautifu
 
 === Structural Integrity Generates Trust
 
-Trust in technical documentation does not come from beautiful fonts or slick animations. It comes from the *certainty that structure reflects intent*:
+Trust in technical documentation does not come from beautiful fonts or slick animations. It comes from the certainty that structure reflects intent:
 
-- A warning is truly a warning (`WARNING:`), not just red text.
-- A cross-reference is a semantic link (`xref:`), not just a styled hyperlink that breaks when content moves.
-- A table is structured data, not ASCII art that collapses when reformatted.
+* A warning is truly a warning (`WARNING:`), not just red text.
+* A cross-reference is a semantic link (`xref:`), not just a styled hyperlink that breaks when content moves.
+* A table is structured data, not ASCII art that collapses when reformatted.
 
-As articulated in our community forums:
+As Terence Kearns articulated in the AsciiDoc community forums: "AsciiDoc, more than Markdown, is about crafting information using precision tools. The tools themselves are the symbols  —  the lexicon. [...] This is about structural integrity and therefore, high trust."
 
-[quote,Terence Kearns, AsciiDoc Communityds]
-____
-AsciiDoc, more than Markdown, is about crafting information using precision tools. The tools themselves are the symbols — the lexicon. […] This is about structural integrity and therefore, *high trust*.  
-____
-
-*Contrast with WYSIWYG:* Visual editors often introduce "misdirection" away from structure. If the underlying structure is ambiguous, the information is fragile. *AsciiDoc refuses this fragility.*
+Visual editors often introduce "misdirection" away from structure. If the underlying structure is ambiguous, the information is fragile. AsciiDoc refuses this fragility.
 
 === The Power of Modularity (DRY Principlefootnote:[See: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself] )
 
-In software engineering, we don't copy-paste code — we import libraries. Documentation should be no different.
+In software engineering, we don't copy-paste code  —  we import libraries. Documentation should be no different.
 
-- *Composition:* AsciiDoc allows building large documents from small, reusable components (`include::`).
-- *Single Source of Truth:* Update a concept in one file, and it propagates everywhere it's included.
-- *Conditional Content:* Use attributes and preprocessing directives to customize output for different audiences without duplicating content.
+* *Composition:* AsciiDoc allows building large documents from small, reusable components (`include::`).
+* *Single Source of Truth:* Update a concept in one file, and it propagates everywhere it's included.
+* *Conditional Content:* Use attributes and preprocessing directives to customize output for different audiences without duplicating content.
 
-This modularity is *impossible in binary formats* (Word, PDF) and *cumbersome in lightweight markup languages* that lack semantic richness (Markdown). AsciiDoc treats content as a *composable, engineered system*.
+This modularity is impossible in binary formats (Word, PDF) and cumbersome in lightweight markup languages that lack semantic richness (Markdown). AsciiDoc treats content as a composable, engineered system.
 
 === Documentation as Code (Docs-as-Codefootnote:[See: https://www.writethedocs.org/guide/docs-as-code/])
 
-We reject the artificial separation between "writers" and "developers." Documentation *is* code. It requires the same discipline:
+We reject the artificial separation between "writers" and "developers." Documentation requires the same discipline as code:
 
 * *Version Control:* Git diff on plain text reveals exactly what changed. Binary "Track Changes" is opaque and unreliable.
 * *Code Review:* Pull requests ensure quality and accuracy before publication.
 * *Continuous Integration:* Automated pipelines validate syntax, check links, and publish to multiple formats (HTML, PDF, EPUB) on every commit.
-* *Testing:* Documentation can be tested — links checked, examples validated, output verified.
+* *Testing:* Documentation can be tested  —  links checked, examples validated, output verified.
 
 The AsciiDoc Working Group explicitly focuses on "usability, interoperability, and extensibility" to support teams, applications, and services that integrate AsciiDoc into their development workflows.
 
-AsciiDoc bridges the gap between the *complexity of DocBook* (professional but unwieldy) and the *simplicity of Markdown* (easy but inadequate for complex documentation). It is the *only viable choice for engineered, large-scale documentation*.
+AsciiDoc bridges the gap between the complexity of DocBook (professional but unwieldy) and the simplicity of Markdown (easy but inadequate for complex documentation). For engineered, large-scale documentation, it provides a viable path forward.
 
 === The Concept of Craft
 
-Writing in AsciiDoc is an *act of crafting information using precision tools*. The symbols (the lexicon) are the tools of the trade.
+Writing in AsciiDoc is an act of crafting information using precision tools. The symbols (the lexicon) are the tools of the trade.
 
-We reject the notion that writing should be "effortless" if that lack of effort *compromises precision and clarity*. We value the *skill and applied effort* required to define information explicitly.
+We reject the notion that writing should be "effortless" if that lack of effort compromises precision and clarity. We value the skill and applied effort required to define information explicitly.
 
-This "craftsman" mindset ensures that the resulting documentation has *authenticity*, *honesty*, and *structural integrity*.
+This craftsman mindset ensures that the resulting documentation has authenticity, honesty, and structural integrity.
 
-*Analogy:* A skilled carpenter does not hide the wood grain or joinery — they highlight it. Similarly, a skilled writer does not hide the document structure — they make it explicit, so that structure *becomes* clarity.
+Consider the analogy: A skilled carpenter does not hide the wood grain or joinery  —  they highlight it. Similarly, a skilled writer does not hide the document structure  —  they make it explicit, so that structure becomes clarity.
 
 === Standardization Enables Interoperability
 
-The Eclipse Foundation's governance ensures a formal specification with an open-source TCK that verifies conformance. This prevents the *dialect fragmentation* that has plagued other lightweight markup languages.
+The Eclipse Foundation's governance ensures a formal specification with an open-source TCK that verifies conformance. This prevents the dialect fragmentation that has plagued other lightweight markup languages.
 
-*Markdown's Problem:* GitHub Flavored Markdown, CommonMark, MultiMarkdown, Pandoc Markdown, and others are all incompatible. A document written for one processor may not render correctly in another.
+Markdown's problem: GitHub Flavored Markdown, CommonMark, MultiMarkdown, Pandoc Markdown, and others are all incompatible. A document written for one processor may not render correctly in another.
 
-*AsciiDoc's Solution:* A compatible implementation must fully implement all non-optional specification elements, pass the TCK, and not alter the specified API. This means:
+AsciiDoc's solution: A compatible implementation must fully implement all non-optional specification elements, pass the TCK, and not alter the specified API. This means:
 
 * *For users:* Confidence that AsciiDoc means the same thing everywhere.
 * *For developers:* Clear guidelines for building conformant tools without splintering the ecosystem.
@@ -302,23 +252,23 @@ The Eclipse Foundation's governance ensures a formal specification with an open-
 
 == The Stance on Tooling: Code Assistance, Not Visual Illusion
 
-Throughout AsciiDoc's history, the demand for WYSIWYG (What You See Is What You Get) editors has been constant. However, the AsciiDoc Working Group maintains a clear philosophical distinction:
+Throughout AsciiDoc's history, the demand for WYSIWYG (What You See Is What You Get) editors has been constant. However, the AsciiDoc Working Group maintains a clear philosophical distinction.
 
-=== We Do Not Believe in the Illusion of WYSIWYGfootnote:[See: https://en.wikipedia.org/wiki/WYSIWYG]
+=== We Do Not Believe in the Illusion of WYSIWYG
 
-*The entire point of AsciiDoc is to escape the trap of visual formatting.*
+The entire point of AsciiDoc is to escape the trap of visual formatting.
 
-When an editor hides the syntax behind visual widgets, it *hides the truth of the document*:
+When an editor hides the syntax behind visual widgets, it hides the truth of the document:
 
 * You lose awareness of the semantic structure.
 * You cannot reason about how the document will behave when converted to different formats.
 * You become dependent on the visual representation, rather than the underlying content.
 
-*WYSIWYG encourages thinking about appearance first, structure second — or never.* This is fundamentally incompatible with AsciiDoc's philosophy.
+WYSIWYG encourages thinking about appearance first, structure second — or never. This is fundamentally incompatible with AsciiDoc's philosophy.
 
 === We Believe in Code Assistance
 
-Instead of masking the markup, we champion tools that *help the writer manage it intelligently*.
+Instead of masking the markup, we champion tools that help the writer manage it intelligently.
 
 We envision an environment similar to a software IDE:
 
@@ -328,18 +278,18 @@ We envision an environment similar to a software IDE:
 * *Contextual preview* — show how a specific block will render, without replacing the source.
 * *Structural navigation* — display an outline tree of sections, includes, and cross-references.
 
-*Key Difference:*
+The difference matters:
 
-- *Visual Editors* make you *feel* like the work is done when it *looks* good.
-- *Code Assistance* helps you ensure the work *is* correct so it *is* good.
+* Visual editors make you feel like the work is done when it looks good.
+* Code assistance helps you ensure the work is correct so it is good.
 
 === Community Freedom vs. Working Group Focus
 
-While the community is *free to innovate and build any tool* they desire — including hybrid editors or even full WYSIWYG solutions — the *AsciiDoc Working Group itself will not prioritize these efforts*.
+While the community is free to innovate and build any tool they desire — including hybrid editors or even full WYSIWYG solutions — the AsciiDoc Working Group itself will not prioritize these efforts.
 
-Why? Because *the core philosophy of AsciiDoc will always prioritize the integrity of the source text over the convenience of a visual interface*.
+Why? Because the core philosophy of AsciiDoc prioritizes the integrity of the source text over the convenience of a visual interface.
 
-*To be clear:* This is not hostility to innovation. It is clarity about identity. AsciiDoc is designed for people who value *structural clarity and semantic precision*. If a tool undermines that, it may be convenient, but it is not aligned with AsciiDoc's purpose.
+This stance reflects clarity about identity, not hostility to innovation. AsciiDoc is designed for people who value structural clarity and semantic precision. If a tool undermines that, it may be convenient, but it is not aligned with AsciiDoc's purpose.
 
 '''
 
@@ -347,50 +297,50 @@ Why? Because *the core philosophy of AsciiDoc will always prioritize the integri
 
 === Primary Audience
 
-1. *Professional technical writers* — documenting software, hardware, APIs, complex systems.
-2. *Developers who write documentation* — advanced README files, architectural guides, API specifications.
-3. *Authors of technical books* — O'Reilly Media, Pragmatic Bookshelf, academic publishers.
-4. *Teams adopting docs-as-code* — documentation versioned, reviewed, and published like software.
+. Professional technical writers — documenting software, hardware, APIs, complex systems.
+. Developers who write documentation — advanced README files, architectural guides, API specifications.
+. Authors of technical books — O'Reilly Media, Pragmatic Bookshelf, academic publishers.
+. Teams adopting docs-as-code — documentation versioned, reviewed, and published like software.
 
 === Secondary Audience
 
-5. *Educators* — course materials with reusable, modular content.
-6. *Researchers* — technical reports with bibliographies, cross-references, and structured data.
-7. *Writers who value longevity* — plain text survives decades; .docx does not.
+. Educators — course materials with reusable, modular content.
+. Researchers — technical reports with bibliographies, cross-references, and structured data.
+. Writers who value longevity — plain text survives decades; .docx does not.
 
 === Not Ideal For
 
-- *Users who demand WYSIWYG* — use LibreOffice Writer, Google Docs or Microsoft Word, etc...
-- *Publications where visual layout trumps semantic structure* — use Adobe InDesign or LaTeX.
+* Users who demand WYSIWYG — use LibreOffice Writer, Google Docs, or Microsoft Word.
+* Publications where visual layout trumps semantic structure — use Adobe InDesign or LaTeX.
 
-*Honesty is important:* AsciiDoc is not the right tool for everyone. It is the right tool for people who care about *semantic integrity*, *long-term maintainability*, and *professional-grade publishing*.
+Honesty matters here: AsciiDoc is not the right tool for everyone. It is the right tool for people who care about semantic integrity, long-term maintainability, and professional-grade publishing.
 
 '''
 
 == A Message to the Newcomer
 
-*If you are new to AsciiDoc: Welcome.*
+If you are new to AsciiDoc: Welcome.
 
-You might be looking for the "Bold" button. *You won't find it.* Instead, you will find a set of precise tools to define exactly what you mean:
+You might be looking for the "Bold" button. You won't find it. Instead, you will find a set of precise tools to define exactly what you mean:
 
-- We don't just "indent" text — we structure it as *semantic blocks* (examples, sidebars, quotes).
-- We don't "copy-paste" sections — we *include* them (`include::`) to ensure consistency.
-- We don't "make text red" — we mark it as a *warning* (`WARNING:`), and the stylesheet decides how warnings appear.
+* We don't just "indent" text — we structure it as semantic blocks (examples, sidebars, quotes).
+* We don't "copy-paste" sections — we include them (`include::`) to ensure consistency.
+* We don't "make text red" — we mark it as a warning (`WARNING:`), and the stylesheet decides how warnings appear.
 
-This may feel harder at first. *That difficulty is the friction of engineering.*
+This may feel harder at first. That difficulty is the friction of engineering.
 
 By accepting it, you are building documentation that is:
 
-* *Robust* — structure doesn't break when content changes.
-* *Versionable* — every change is transparent in Git diffs.
-* *Future-proof* — plain text outlasts proprietary formats.
-* *Portable* — one source, many outputs (HTML, PDF, EPUB, slides).
+* Robust — structure doesn't break when content changes.
+* Versionable — every change is transparent in Git diffs.
+* Future-proof — plain text outlives proprietary formats.
+* Portable — one source, many outputs (HTML, PDF, EPUB, slides).
 
-*You are not just typing words. You are constructing the architecture of knowledge.*
+Writing in AsciiDoc means constructing the architecture of knowledge.
 
-Over time, the friction disappears. What remains is *fluency*: the ability to express complex ideas with clarity, precision, and structural elegance.
+Over time, the friction disappears. What remains is fluency: the ability to express complex ideas with clarity, precision, and structural elegance.
 
-*Copy text from an email into a document and see how quickly you can turn it into documentation.* Almost immediately, you'll find your writing zen and enjoy the rewarding experience of sharing knowledge.
+Copy text from an email into a document and see how quickly you can turn it into documentation. Almost immediately, you'll find your writing rhythm and enjoy the rewarding experience of sharing knowledge.
 
 '''
 
@@ -417,7 +367,7 @@ Establish compatibility rules and a branding process for specification implement
 * Document best practices and patterns.
 * Facilitate adoption by organizations (Git project, Red Hat, GitHub, GitLab, O'Reilly Media).
 
-*What the Working Group Does NOT Do:*
+What the Working Group Does Not Do:
 
 * Develop specific editors or IDEs (though it encourages the community to do so).
 * Prioritize WYSIWYG editors (though it does not forbid them).
@@ -427,22 +377,16 @@ Establish compatibility rules and a branding process for specification implement
 
 == Conclusion: Why AsciiDoc Matters
 
-AsciiDoc is not just "a markup language." It is a *philosophy of communication* that defends:
+AsciiDoc defends a philosophy of communication grounded in integrity over convenience, structure over appearance, longevity over trends, and craft over carelessness.
 
-* *Integrity over convenience.*
-* *Structure over appearance.*
-* *Longevity over trends.*
-* *Craft over carelessness.*
+In a world where documentation is often treated as an afterthought, AsciiDoc offers tools and principles to treat it as serious, professional, and engineered communication.
 
-In a world where documentation is often treated as an afterthought, AsciiDoc offers tools and principles to treat it as *serious, professional, and engineered communication*.
+Documentation is the preservation and transmission of knowledge across time and people.
 
-Documentation is not decoration. It is not a secretarial task. *It is the preservation and transmission of knowledge across time and people.*
+If you value clarity, control, and quality — AsciiDoc merits your consideration.
 
-If you value *clarity*, *control*, and *quality* — AsciiDoc is for you.
+If you care about semantic truth more than visual illusion — AsciiDoc aligns with your priorities.
 
-If you care about *semantic truth* more than visual illusion — AsciiDoc is for you.
+If you believe that writing is an act of construction, not consumption — AsciiDoc provides the tools for that work.
 
-If you believe that *writing is an act of construction*, not consumption — AsciiDoc is for you.
-
-*Live or die by documentation?*  
-*"Live!"*
+Live or die by documentation? Choose to live.
