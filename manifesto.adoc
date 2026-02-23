@@ -6,6 +6,14 @@
 
 '''
 
+[NOTE]
+.Transparency: AI-assisted prototype, not an official document
+====
+This document was written by Claude (Anthropic's AI), under the direction and editorial review of its author. The content is accurate and grounded in the AsciiDoc Working Group charter, community discussions, and project history — but carries no official standing. Only the https://asciidoc.zulipchat.com/[AsciiDoc Working Group] has the authority to issue official documents. This prototype exists to synthesize existing knowledge and provide a concrete foundation for a future official document. See the link:./README.adoc[README] for the full rationale behind this approach.
+====
+
+'''
+
 == Writing Shouldn't Be This Hard
 
 Writing is hard. Experience has conditioned us to believe this, yet we cannot avoid it, especially in the tech industry. Even the most brilliant software becomes useless without good documentation. If users fail, the project fails.
